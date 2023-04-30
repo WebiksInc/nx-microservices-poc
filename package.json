@@ -5,7 +5,8 @@
   "scripts": {
     "kill-containers": "node ./CI/scripts/docker-kill.js",
     "minikube-deploy": "node ./CI/scripts/minikube-deploy.js",
-    "run-all": "npx nx run-many --target=serve --all=true"
+    "run-all": "npx nx run-many --target=serve --all=true",
+    "docker-build-all": "npx nx run api-service:docker-build"
   },
   "private": true,
   "dependencies": {
