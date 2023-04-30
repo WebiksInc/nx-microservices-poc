@@ -72,6 +72,10 @@
       "options": {
         "buildTarget": "tech-shop:build"
       }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/tech-shop/Dockerfile . -t maor700/tech-shop:latest"
     }
   },
   "tags": []

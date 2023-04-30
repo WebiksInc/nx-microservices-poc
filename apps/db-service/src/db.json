@@ -1,0 +1,313 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "123 Main St, Anytown, USA"
+    },
+    {
+      "id": "2",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "email": "jane.doe@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "456 Maple St, Anytown, USA"
+    },
+    {
+      "id": "3",
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "email": "bob.smith@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "789 Oak St, Anytown, USA"
+    },
+    {
+      "id": "4",
+      "first_name": "Alice",
+      "last_name": "Jones",
+      "email": "alice.jones@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "321 Elm St, Anytown, USA"
+    },
+    {
+      "id": "5",
+      "first_name": "Michael",
+      "last_name": "Johnson",
+      "email": "michael.johnson@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "654 Pine St, Anytown, USA"
+    },
+    {
+      "id": "6",
+      "first_name": "Sarah",
+      "last_name": "Williams",
+      "email": "sarah.williams@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "987 Birch St, Anytown, USA"
+    },
+    {
+      "id": "7",
+      "first_name": "David",
+      "last_name": "Brown",
+      "email": "david.brown@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "246 Cedar St, Anytown, USA"
+    },
+    {
+      "id": "8",
+      "first_name": "Emily",
+      "last_name": "Davis",
+      "email": "emily.davis@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "135 Walnut St, Anytown, USA"
+    },
+    {
+      "id": "9",
+      "first_name": "Daniel",
+      "last_name": "Garcia",
+      "email": "daniel.garcia@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "864 Oak St, Anytown, USA"
+    },
+    {
+      "id": "10",
+      "first_name": "Olivia",
+      "last_name": "Wilson",
+      "email": "olivia.wilson@example.com",
+      "phone": "+1 (555) 555-5555",
+      "address": "753 Maple St, Anytown, USA"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "T-Shirt",
+      "description": "A comfortable and stylish t-shirt made from high-quality cotton",
+      "price": 19.99,
+      "stock": 100
+    },
+    {
+      "id": "2",
+      "name": "Hoodie",
+      "description": "A warm and cozy hoodie perfect for cooler weather",
+      "price": 39.99,
+      "stock": 50
+    },
+    {
+      "id": "3",
+      "name": "Jeans",
+      "description": "Durable and stylish jeans made from premium denim",
+      "price": 59.99,
+      "stock": 75
+    },
+    {
+      "id": "4",
+      "name": "Sneakers",
+      "description": "Comfortable and stylish sneakers with a classic design",
+      "price": 79.99,
+      "stock": 25
+    },
+    {
+      "id": "5",
+      "name": "Dress",
+      "description": "A beautiful and elegant dress perfect for special occasions",
+      "price": 99.99,
+      "stock": 30
+    },
+    {
+      "id": "6",
+      "name": "Blouse",
+      "description": "A stylish and comfortable blouse made from high-quality materials",
+      "price": 29.99,
+      "stock": 60
+    },
+    {
+      "id": "7",
+      "name": "Pants",
+      "description": "Comfortable and stylish pants made from premium materials",
+      "price": 49.99,
+      "stock": 50
+    },
+    {
+      "id": "8",
+      "name": "Jacket",
+      "description": "A warm and stylish jacket perfect for colder weather",
+      "price": 89.99,
+      "stock": 20
+    },
+    {
+      "id": "9",
+      "name": "Skirt",
+      "description": "A fashionable and comfortable skirt made from high-quality materials",
+      "price": 39.99,
+      "stock": 40
+    },
+    {
+      "id": "10",
+      "name": "Shorts",
+      "description": "Comfortable and stylish shorts perfect for warm weather",
+      "price": 24.99,
+      "stock": 80
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "customer_id": "1",
+      "order_date": "2022-01-01",
+      "total_amount": 79.98,
+      "items": [
+        {
+          "product_id": "1",
+          "quantity": 2,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "customer_id": "2",
+      "order_date": "2022-01-02",
+      "total_amount": 159.96,
+      "items": [
+        {
+          "product_id": "1",
+          "quantity": 4,
+          "price": 19.99
+        },
+        {
+          "product_id": "2",
+          "quantity": 1,
+          "price": 39.99
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "customer_id": "3",
+      "order_date": "2022-01-03",
+      "total_amount": 239.94,
+      "items": [
+        {
+          "product_id": "1",
+          "quantity": 6,
+          "price": 19.99
+        },
+        {
+          "product_id": "2",
+          "quantity": 3,
+          "price": 39.99
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "customer_id": "4",
+      "order_date": "2022-01-04",
+      "total_amount": 59.98,
+      "items": [
+        {
+          "product_id": "3",
+          "quantity": 1,
+          "price": 59.99
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "customer_id": "5",
+      "order_date": "2022-01-05",
+      "total_amount": 199.97,
+      "items": [
+        {
+          "product_id": "3",
+          "quantity": 3,
+          "price": 59.99
+        },
+        {
+          "product_id": "4",
+          "quantity": 1,
+          "price": 79.99
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "customer_id": "6",
+      "order_date": "2022-01-06",
+      "total_amount": 109.98,
+      "items": [
+        {
+          "product_id": "5",
+          "quantity": 1,
+          "price": 99.99
+        },
+        {
+          "product_id": "6",
+          "quantity": 2,
+          "price": 29.99
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "customer_id": "7",
+      "order_date": "2022-01-07",
+      "total_amount": 69.98,
+      "items": [
+        {
+          "product_id": "6",
+          "quantity": 2,
+          "price": 29.99
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "customer_id": "8",
+      "order_date": "2022-01-08",
+      "total_amount": 209.97,
+      "items": [
+        {
+          "product_id": "7",
+          "quantity": 4,
+          "price": 49.99
+        },
+        {
+          "product_id": "8",
+          "quantity": 1,
+          "price": 89.99
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "customer_id": "9",
+      "order_date": "2022-01-09",
+      "total_amount": 99.98,
+      "items": [
+        {
+          "product_id": "9",
+          "quantity": 2,
+          "price": 39.99
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "customer_id": "10",
+      "order_date": "2022-01-10",
+      "total_amount": 49.98,
+      "items": [
+        {
+          "product_id": "10",
+          "quantity": 2,
+          "price": 24.99
+        }
+      ]
+    }
+  ]
+}

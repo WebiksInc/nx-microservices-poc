@@ -1,0 +1,85 @@
+type Customer {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  phone: String
+  address: String
+  orders: [Order!]!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String
+  price: Float!
+  stock: Int!
+  orders: [OrderProduct!]!
+}
+
+type Order {
+  id: ID!
+  customer: Customer!
+  order_date: String!
+  total_amount: Float!
+  items: [OrderProduct!]!
+}
+
+type OrderProduct {
+  product: Product!
+  quantity: Int!
+  price: Float!
+}
+
+type Query {
+  orders: [Order!]!
+  order(id: ID!): Order
+}
+
+type Mutation {
+  createCustomer(
+    first_name: String!
+    last_name: String!
+    email: String!
+    phone: String
+    address: String
+  ): Customer!
+  updateCustomer(
+    id: ID!
+    first_name: String
+    last_name: String
+    email: String
+    phone: String
+    address: String
+  ): Customer!
+  deleteCustomer(id: ID!): ID!
+  createProduct(
+    name: String!
+    description: String
+    price: Float!
+    stock: Int!
+  ): Product!
+  updateProduct(
+    id: ID!
+    name: String
+    description: String
+    price: Float
+    stock: Int
+  ): Product!
+  deleteProduct(id: ID!): ID!
+  createOrder(
+    customer_id: ID!
+    order_date: String!
+    items: [OrderProductInput!]!
+  ): Order!
+}
+
+input OrderProductInput {
+  product_id: ID!
+  quantity: Int!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

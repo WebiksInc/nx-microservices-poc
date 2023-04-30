@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tech-shop-deployment
+  namespace: tech-shop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tech-shop
+  template:
+    metadata:
+      labels:
+        app: tech-shop
+    spec:
+      containers:
+      - name: tech-shop
+        image: maor700/tech-shop:latest
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tech-shop-service
+  namespace: tech-shop
+spec:
+  type: LoadBalancer
+  selector:
+    app: tech-shop
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

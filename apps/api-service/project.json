@@ -1,0 +1,57 @@
+{
+  "name": "api-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/api-service/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/api-service",
+        "main": "apps/api-service/src/main.ts",
+        "tsConfig": "apps/api-service/tsconfig.app.json",
+        "generatePackageJson": true,
+        "assets": [{ "input": "apps/api-service/src/app/graphql", "glob": "schema.graphql", "output": "/" }],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/api-service/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "generateLockfile": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "api-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "api-service:build:development"
+        },
+        "production": {
+          "buildTarget": "api-service:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/api-service/**/*.ts"]
+      }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/api-service/Dockerfile . -t maor700/api-service:latest"
+    }
+  },
+  "tags": []
+}

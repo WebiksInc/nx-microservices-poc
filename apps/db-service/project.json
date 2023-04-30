@@ -1,0 +1,57 @@
+{
+  "name": "db-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/db-service/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/db-service",
+        "main": "apps/db-service/src/main.ts",
+        "tsConfig": "apps/db-service/tsconfig.app.json",
+        "generatePackageJson": true,
+        "assets": [{ "input": "apps/db-service/src/", "glob": "db.json", "output": "/" }],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/db-service/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "generateLockfile": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "db-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "db-service:build:development"
+        },
+        "production": {
+          "buildTarget": "db-service:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/db-service/**/*.ts"]
+      }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/db-service/Dockerfile . -t maor700/db-service:latest"
+    }
+  },
+  "tags": []
+}

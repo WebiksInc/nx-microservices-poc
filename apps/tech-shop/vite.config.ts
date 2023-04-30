@@ -5,14 +5,18 @@ import viteTsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   cacheDir: "../../node_modules/.vite/tech-shop",
-
   server: {
-    port: 4200,
+    proxy: {
+      "/graphql": {
+        target: "http://localhost:8080",
+      }
+    },
+    port: 3000,
     host: "localhost",
   },
 
   preview: {
-    port: 4300,
+    port: 3001,
     host: "localhost",
   },
 

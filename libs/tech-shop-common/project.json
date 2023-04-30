@@ -1,0 +1,26 @@
+{
+  "name": "tech-shop-common",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tech-shop-common/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/tech-shop-common",
+        "main": "libs/tech-shop-common/src/index.ts",
+        "tsConfig": "libs/tech-shop-common/tsconfig.lib.json",
+        "assets": ["libs/tech-shop-common/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/tech-shop-common/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
